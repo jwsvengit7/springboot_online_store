@@ -1,0 +1,308 @@
+/* 
+.
+.
+.
+.
+.CCS CODE */
+span{
+	font-family: sans-serif;
+}
+input{
+	font-family: sans-serif;
+}
+.white{
+	color:white !important
+}
+.black{
+	color:black !important
+}
+.ccc{
+	color:#a1a4b5 !important
+}
+.font-w-none{
+	font-weight: normal !important;
+}
+
+.display-none{
+	display: none;
+}
+.display{
+	display: flex;
+}
+.align-items{
+	align-items: center;
+}
+.align-start{
+	align-items: flex-start;
+}
+.align-end{
+	align-items: flex-end;
+}
+.justify-content{
+	justify-content: center;
+}
+.justify-space-around{
+	justify-content: space-around;
+}
+.justify-space-between{
+	justify-content: space-between;
+}
+.flex-direction{
+	flex-direction: column;
+}
+.justify-flex-end{
+	justify-content: flex-end;
+}
+.text-align{
+	text-align: center;
+}
+.darkblue{
+	color:#003366
+}
+.orange{
+	color: orange;
+}
+.cursor{
+	cursor: pointer;
+}
+.red{
+	color: red;
+}
+.lightblue{
+	color: lightblue;
+}
+.black-fade{
+	color: #00000099;
+}
+.f10{
+	font-size: 10px;
+}
+
+.f11{
+	font-size: 11px;
+}
+.f12{
+	font-size: 12px;
+}
+.f13{
+	font-size: 13px;
+}
+.f14{
+	font-size: 14px;
+}
+.f15{
+	font-size: 15px;
+}
+.f16{
+	font-size: 16px;
+}
+.f17{
+	font-size: 17px;
+}
+.f18{
+	font-size: 18px;
+}
+.f19{
+	font-size: 19px;
+}
+.f20{
+	font-size: 20px;
+}
+.f25{
+	font-size: 25px;
+}
+.f30{
+	font-size: 30px;
+}
+.f22{
+	font-size: 22px;
+}
+.f27{
+	font-size: 27px;
+}
+
+.f30{
+	font-size: 30px;
+}
+
+.f35{
+	font-size: 35px;
+}
+.f40{
+	font-size: 40px;
+}
+
+.f50{
+	font-size: 50px;
+}
+.f60{
+	font-size: 60px;
+}
+.wi-20{
+	width: 20%;
+}
+.wi-30{
+	width: 30%;
+}
+.wi-35{
+	width: 30%;
+}
+.wi-40{
+	width: 40%;
+}
+.wi-45{
+	width: 45%;
+}
+.wi-50{
+	width: 50%;
+}.wi-60{
+	width: 60%;
+}.wi-70{
+	width: 70%;
+}.wi-80{
+	width: 80%;
+}.wi-90{
+	width: 90%;
+}.wi-100{
+	width: 100%;
+}
+.he-8{
+	height: 8px;
+}
+.he-10{
+	height: 10px;
+}
+.he-20{
+	height: 20px;
+}
+.he-30{
+	height: 30px;
+}
+.he-40{
+	height: 40px;
+}
+.he-50{
+	height: 50px;
+}
+.he-60{
+	height: 60px;
+}
+.he-70{
+	height: 70px;
+}
+.he-80{
+	height: 80px;
+}
+
+.he-90{
+	height: 90px;
+}
+.he-100{
+	height: 100px;
+}
+.he-200 {
+	height: 200px;
+}
+.he-300 {
+	height: 300px;
+}
+.he-150 {
+	height: 150px;
+}
+.bg-ddd{
+	background-color: #ddd;
+}
+.bg-good-blue{
+	background-color: #0a66c2;
+
+}
+.bg-green{
+	background-color: green;
+}
+.b-radius-10{
+	border-radius: 10px;
+}
+.b-radius-15{
+	border-radius: 15px;
+}
+.b-radius-20{
+	border-radius: 20px;
+}
+.b-radius-30{
+	border-radius: 30px;
+}
+.b-radius-5{
+	border-radius: 5px;
+}
+.mag-5{
+	margin: 5px;
+}
+.mag-0{
+	margin: 0px;
+}
+.mag-10{
+	margin: 10px;
+}
+.mag-12{
+	margin: 12px;
+}
+.mag-15{
+	margin: 15px;
+}
+.mag-bottom-10{
+	margin-bottom: 10px  !important;
+}
+.mag-bottom-20{
+	margin-bottom: 20px  !important;
+}
+.mag-bottom-15{
+	margin-bottom: 15px;
+}
+
+.text-u-none{
+	text-decoration: none;
+}
+.pad-left-5{
+	padding-left: 5px;
+}
+.pad{
+	padding: 1px !important;
+}
+.pad-10{
+	padding: 10px;
+}
+.pad-5{
+	padding: 5px;
+}
+.pad-left-10{
+	padding-left: 10px;
+}
+.pad-right-10{
+	padding-right: 10px;
+}
+.wrap{
+	flex-wrap: wrap;
+}
+.origin-black{
+	color:#00000099
+}
+.redbg{
+	background-color: red !important;
+}
+.orangebg{
+	background-color: orange !important;
+}
+.goldenrod{
+	color: goldenrod;
+}
+.blue{
+	color: blue;
+}
+@media(max-width:600px){
+	.none{
+		display: none;
+	}
+}
+/* END CSS STYLE SOLVE ===>
+
+-->CSS REVIEW FOR APP===>*/
