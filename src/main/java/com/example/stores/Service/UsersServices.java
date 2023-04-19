@@ -1,6 +1,6 @@
 package com.example.stores.Service;
 
-import com.example.stores.DAO.UserDTO;
+import com.example.stores.DTO.UserDTO;
 import com.example.stores.Entity.UsersModel;
 import com.example.stores.Repository.CartRepository;
 import com.example.stores.Repository.UserRep.UserService;

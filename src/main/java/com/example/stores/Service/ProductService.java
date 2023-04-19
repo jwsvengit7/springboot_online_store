@@ -1,6 +1,6 @@
 package com.example.stores.Service;
 
-import com.example.stores.DAO.ProductDTO;
+import com.example.stores.DTO.ProductDTO;
 import com.example.stores.Entity.Cart;
 import com.example.stores.Entity.Product;
 import com.example.stores.Repository.CartRepository;

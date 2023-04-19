@@ -1,5 +1,5 @@
 package com.example.stores.controller;
-import com.example.stores.DAO.UserDTO;
+import com.example.stores.DTO.UserDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;

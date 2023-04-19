@@ -1,7 +1,7 @@
 package com.example.stores.controller;
 
-import com.example.stores.DAO.AdminDTO;
-import com.example.stores.DAO.ProductDTO;
+import com.example.stores.DTO.AdminDTO;
+import com.example.stores.DTO.ProductDTO;
 import com.example.stores.Entity.Product;
 import com.example.stores.Service.AdminService;
 import lombok.RequiredArgsConstructor;

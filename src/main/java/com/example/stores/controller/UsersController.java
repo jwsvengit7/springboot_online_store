@@ -1,7 +1,7 @@
 package com.example.stores.controller;
 
-import com.example.stores.DAO.CartDTO;
-import com.example.stores.DAO.UserDTO;
+import com.example.stores.DTO.CartDTO;
+import com.example.stores.DTO.UserDTO;
 import com.example.stores.Entity.UsersModel;
 import com.example.stores.Service.CartService;
 import com.example.stores.Service.ProductService;

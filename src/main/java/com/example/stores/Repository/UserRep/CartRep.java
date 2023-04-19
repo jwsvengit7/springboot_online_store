@@ -1,6 +1,6 @@
 package com.example.stores.Repository.UserRep;
 
-import com.example.stores.DAO.CartDTO;
+import com.example.stores.DTO.CartDTO;
 
 public interface CartRep {
     int increaseCartOrAddCart(CartDTO cartDTO);

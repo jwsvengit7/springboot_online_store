@@ -1,4 +1,4 @@
-package com.example.stores.DAO;
+package com.example.stores.DTO;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
