@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @Service
 @RequiredArgsConstructor
-public class AdminService  {
+public class AdminServiceImplentation {
 
     private final UsersRepository userRepository;
     private final ProductRepository productRepository;

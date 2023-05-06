@@ -2,7 +2,7 @@ package com.example.stores.API;
 
 import com.example.stores.Entity.Product;
 import com.example.stores.Entity.UsersModel;
-import com.example.stores.Service.AdminService;
+import com.example.stores.Service.AdminServiceImplentation;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,24 +15,24 @@ import java.util.List;
 public class ApiController {
 
 
-    private  AdminService adminService;
+    private AdminServiceImplentation adminServiceImplentation;
 
     @GetMapping("/api-users")
     public List<UsersModel> getUsers() {
-        return adminService.allUser();
+        return adminServiceImplentation.allUser();
     }
 
     @GetMapping("/api-product")
     public List<Product> getAllProduct() {
-        return adminService.allProductJson();
+        return adminServiceImplentation.allProductJson();
     }
     @GetMapping("/user-length")
     public Long countUser(){
-        return adminService.findsUserLength();
+        return adminServiceImplentation.findsUserLength();
     }
     @GetMapping("/product-length")
     public Long countProduct(){
-        return adminService.findsProductLength();
+        return adminServiceImplentation.findsProductLength();
     }
 
     @GetMapping("/api")

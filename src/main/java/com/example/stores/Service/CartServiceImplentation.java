@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @Data
 @RequiredArgsConstructor
-public class CartService implements CartRep {
+public class CartServiceImplentation implements CartRep {
 
     private final CartRepository cartRepository;
     private  final ProductRepository productRepository;

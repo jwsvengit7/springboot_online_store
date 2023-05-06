@@ -9,50 +9,63 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+
+import java.util.Random;
 
 @Service
 @Data
 
 @RequiredArgsConstructor
 
-public class UsersServices implements  UserService {
+public class UsersServicesImplentation implements  UserService {
     private final UsersRepository userRepository;
     private final CartRepository cartRepository;
+    private final HttpServletRequest request;
+    private final ModelMapper modelMapper;
 
     @Override
-    public boolean save(UserDTO userDTO) {
-        boolean status;
+    public Object save(UserDTO userDTO) {
+        HttpSession session = request.getSession();
         if (userDTO.getUsername() == null || userDTO.getPassword() == null) {
-            status = false;
+            throw  new RuntimeException("Error");
         } else {
             UsersModel use = checkIf(userDTO.getEmail());
             if (use != null) {
                 System.out.println("Duplicate login");
-                status = false;
+                throw  new RuntimeException("Error");
+
             } else {
-                UsersModel usersModel = new UsersModel();
-                usersModel.setUsername(userDTO.getUsername());
-                usersModel.setPassword(userDTO.getPassword());
-                usersModel.setEmail(userDTO.getEmail());
-                System.out.println("Saved: " + usersModel);
-                userRepository.save(usersModel);
-                status = true;
+                Random random = new Random();
+                Long randomNumber = random.nextLong(10);
+                session.setAttribute("otp",randomNumber);
+                session.setAttribute("userDto",userDTO);
+                System.out.println(session.getAttribute("userDto"));
             }
         }
-        return status;
+        return session.getAttribute("otp");
+    }
+    @Override
+    public UserDTO validateUser(UserDTO userDTO){
+        UsersModel usersModel = new UsersModel();
+        usersModel.setUsername(userDTO.getUsername());
+        usersModel.setPassword(userDTO.getPassword());
+        usersModel.setEmail(userDTO.getEmail());
+        System.out.println("Saved: " + usersModel);
+        return modelMapper.map(userRepository.save(usersModel),UserDTO.class);
     }
     public UsersModel checkIf(String email) {
         return userRepository.findUsersModelByEmail(email).orElse(null);
     }
     @Override
-    public UsersModel authenticate(UserDTO userDTO) {
-        return userRepository.findUsersModelByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).orElse(null);
+    public UserDTO authenticate(UserDTO userDTO) {
+        return modelMapper.map(userRepository.findUsersModelByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).orElse(null),UserDTO.class);
     }
     @Override
     public Model saveAllSession(Model model, UserDTO user, HttpServletRequest https, String status) {
-        UsersModel check = authenticate(user);
+        UserDTO check = authenticate(user);
         HttpSession session = https.getSession();
         session.setAttribute("session_id", check.getId());
         session.setAttribute("session_email", check.getEmail());

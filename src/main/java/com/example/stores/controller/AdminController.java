@@ -3,7 +3,7 @@ package com.example.stores.controller;
 import com.example.stores.DTO.AdminDTO;
 import com.example.stores.DTO.ProductDTO;
 import com.example.stores.Entity.Product;
-import com.example.stores.Service.AdminService;
+import com.example.stores.Service.AdminServiceImplentation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ import java.io.IOException;
 @Controller
 @RequiredArgsConstructor
 public class AdminController {
-    private final AdminService adminService;
+    private final AdminServiceImplentation adminServiceImplentation;
 
     @GetMapping("/admin")
     public ModelAndView admin(ModelAndView modelAndView) {
@@ -44,10 +44,10 @@ public class AdminController {
         if(view=="Admin/view_details" || view=="Admin/index" ){
             modelAndView.setViewName(view);
             modelAndView.addObject("adminUser", new AdminDTO());
-            modelAndView.addObject("countUser", adminService.findsUserLength());
-            modelAndView.addObject("listOfUsers", adminService.allUser());
-            modelAndView.addObject("listOfProduct", adminService.allProductJson());
-            modelAndView.addObject("countProduct", adminService.findsProductLength());
+            modelAndView.addObject("countUser", adminServiceImplentation.findsUserLength());
+            modelAndView.addObject("listOfUsers", adminServiceImplentation.allUser());
+            modelAndView.addObject("listOfProduct", adminServiceImplentation.allProductJson());
+            modelAndView.addObject("countProduct", adminServiceImplentation.findsProductLength());
         }
 
         return modelAndView;
@@ -55,7 +55,7 @@ public class AdminController {
 
     @PostMapping("/upload_product")
     public ModelAndView createProduct(@ModelAttribute Product product ,MultipartFile images, ModelAndView model) throws IOException {
-        if(adminService.saveProduct(product,images)){
+        if(adminServiceImplentation.saveProduct(product,images)){
             model.setViewName("redirect:admin/add-product");
         }else{
             model.setViewName("redirect:error_page");
@@ -69,12 +69,12 @@ public class AdminController {
                                 @RequestParam("price") Integer price,
                                 @RequestParam("category") String category,
                                 @RequestParam("qty") Integer qty) {
-        Product productToUpdate = adminService.getProductById(id);
+        Product productToUpdate = adminServiceImplentation.getProductById(id);
         productToUpdate.setName(name);
         productToUpdate.setPrice(price);
         productToUpdate.setCategory(category);
         productToUpdate.setQty(qty);
-        adminService.updateProduct(productToUpdate);
+        adminServiceImplentation.updateProduct(productToUpdate);
         return "redirect:/admin/view-product";
     }
     @PostMapping("/delete")

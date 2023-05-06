@@ -12,7 +12,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -104,185 +104,226 @@
 <!-- Navbar End -->
 
 
-    <!-- Breadcrumb Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <div class="col-12">
-                <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shopping Cart</span>
-                </nav>
-            </div>
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" href="#">Shop</a>
+                <span class="breadcrumb-item active">Shopping Cart</span>
+            </nav>
         </div>
     </div>
-    <!-- Breadcrumb End -->
+</div>
+<!-- Breadcrumb End -->
 
 
-    <!-- Cart Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <div class="col-lg-8 table-responsive mb-5">
-                <table class="table table-light table-borderless table-hover text-center mb-0">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Products</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody class="align-middle">
-                        <tr th:each="cartlist,index:${cart}">
-                            <td class="align-middle"><img th:src="@{|${cartlist.getImage()}|}" alt="" style="width: 50px;" th:text="${cartlist.getName()}"></td>
-                            <td class="align-middle" th:text="${cartlist.getPrice()}"></td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" th:value="${cartlist.getQty()}">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </td>
-                            <td><input class="align-middle" th:value="${cartlist.qty*cartlist.getPrice()}" /></td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-lg-4">
-                <form class="mb-30" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
-                        </div>
-                    </div>
-                </form>
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
-                <div class="bg-light p-30 mb-5">
-                    <div class="border-bottom pb-2">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h6>Subtotal</h6>
-                            <h6>$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
-                        </div>
-                    </div>
-                    <div class="pt-2">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5>Total</h5>
-                            <h5>$160</h5>
-                        </div>
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Cart End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
+<!-- Cart Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 table-responsive mb-5">
+            <table class="table table-light table-borderless table-hover text-center mb-0">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody class="align-middle">
+                <tr th:each="cartlist,index:${cart}">
+                    <td class="align-middle"><img th:src="@{|${cartlist.getImage()}|}" alt="" style="width: 50px;" th:text="${cartlist.getName()}"></td>
+                    <td class="align-middle" th:text="${cartlist.getPrice()}"></td>
+                    <td class="align-middle">
+                        <div class="input-group quantity mx-auto" style="width: 100px;">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-minus" >
+                                    <i class="fa fa-minus"></i>
+                                </button>
                             </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" th:value="${cartlist.getQty()}">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-plus">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
                         </div>
+
+                    </td>
+                    <td><input type="number" class="align-middle amount" th:value="${cartlist.qty*cartlist.getPrice()}" /></td>
+                    <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <form class="mb-30" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary">Apply Coupon</button>
+                    </div>
+                </div>
+            </form>
+            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
+            <div class="bg-light p-30 mb-5">
+                <div class="border-bottom pb-2">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Subtotal</h6>
+                        <h6><input type="" id="prices" style="border: 0px;font-size:25px" /></h6>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="font-weight-medium">Shipping</h6>
+                        <h6 class="font-weight-medium">$10</h6>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5>Total</h5>
+                        <h5 id="totals"></h5>
+                        <input type="hidden" id="email-address" th:value="${session_email}" />
+                    </div>
+                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" onclick="payWithPaystack()">Proceed To Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://js.paystack.co/v1/inline.js"></script>
+
+        <script>
+            let paymentForm = document.getElementById('paymentForm');
+            let values =document.getElementsByClassName("amount");
+
+            let plus=0;
+
+            for (let i = 0; i < values.length; i++) {
+                let element = parseInt(values[i].value);
+                plus+=element;
+                console.log(plus);
+            }
+
+            let prices = document.getElementById("prices").value=plus
+            let total_price=document.getElementById("totals").innerHTML=prices+10;
+
+            let time = new Date().setSeconds();
+            let randomNumber = Math.random() * 10+time;
+            paymentForm.addEventListener('submit', payWithPaystack, false);
+
+            function payWithPaystack() {
+                const handler = PaystackPop.setup({
+                    key: 'pk_test_1a75dd903d1b8da8ee8dd9da8263b58caa0a6380',
+                    email: document.getElementById('email-address').value,
+                    amount: total_price * 100,
+                    currency: 'NGN',
+                    ref: randomNumber,
+                    callback: function(response) {
+                        const reference = response.reference;
+                        alert('Payment complete! Reference: ' + reference);
+                    },
+                    onClose: function() {
+                        alert('Transaction was not completed, window closed.');
+                    },
+                });
+                handler.openIframe();
+            }
+        </script>
+    </div>
+</div>
+<!-- Cart End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+    <div class="row px-xl-5 pt-5">
+        <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+            <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
+            <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                    <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email Address">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
+    </div>
+    <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="col-md-6 px-xl-0">
+            <p class="mb-md-0 text-center text-md-left text-secondary">
+                &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
+                by
+                <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
+            </p>
+        </div>
+        <div class="col-md-6 px-xl-0 text-center text-md-right">
+            <img class="img-fluid" src="img/payments.png" alt="">
         </div>
     </div>
-    <!-- Footer End -->
+</div>
+<!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script th:src="@{/lib/easing/easing.min.js}"></script>
-    <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
 
-    <!-- Contact Javascript File -->
-    <script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
-    <script th:src="@{/mail/contact.js}"></script>
+<!-- Contact Javascript File -->
+<script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/mail/contact.js}"></script>
 
-    <!-- Template Javascript -->
-    <script th:src="@{/jss/main.js}"></script>
+<!-- Template Javascript -->
+<script th:src="@{/jss/main.js}"></script>
 </body>
 
 </html>

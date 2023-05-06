@@ -6,9 +6,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;
 
 public interface UserService {
-    boolean save(UserDTO userDTO);
-    UsersModel authenticate(UserDTO userDTO);
-     Model saveAllSession(Model model,UserDTO userDTO, HttpServletRequest https, String status);
+    Object save(UserDTO userDTO);
+    UserDTO authenticate(UserDTO userDTO);
+    UserDTO validateUser(UserDTO userDTO);
+    Model saveAllSession(Model model,UserDTO userDTO, HttpServletRequest https, String status);
 
 
 
